@@ -85,7 +85,7 @@ jobs:
 
   setup:
     name: Configure cases to run
-    needs: [repocheck,runcheck]
+    needs: [runcheck]
     runs-on: ubuntu-20.04
     if: needs.runcheck.outputs.cirun == 'yes'
 
@@ -114,7 +114,6 @@ jobs:
         echo "test set  : $test_"
         echo "image name: $img_"
 
-        echo "repocheck: ${{needs.repocheck.outputs.current}}"
         echo "runcheck: ${{needs.runcheck.outputs.cirun}}"
 
 
