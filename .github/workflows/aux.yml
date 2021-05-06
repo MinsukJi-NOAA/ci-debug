@@ -75,7 +75,6 @@ jobs:
 
   startrunner:
     name: Start runners
-    needs: repocheck
     runs-on: ubuntu-20.04
     outputs:
       started: ${{ steps.ec2.outputs.started }}
