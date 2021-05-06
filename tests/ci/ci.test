@@ -1,6 +1,6 @@
 fv3_control
-dcp rst bit
+rst bit dbg
 fv3_regional_control
-thr dcp
+thr
 cpld_control
 rst
