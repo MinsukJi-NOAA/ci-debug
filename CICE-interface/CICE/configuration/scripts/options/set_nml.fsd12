@@ -1,0 +1,5 @@
+tr_fsd = .true.
+nfsd = 12
+wave_spec_type = 'profile'
+nfreq = 25
+
