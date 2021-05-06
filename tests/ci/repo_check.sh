@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu
+set -eux
 
 # This script checks if head repo of PR is up to date with ufs-weather-model develop
 # Checks for top level (ufs-weather-model) and next level components (submodules)
