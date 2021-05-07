@@ -87,10 +87,10 @@ jobs:
       run: |
         cd ${{ github.workspace }}/tests/ci
         eval url=$base_url/${{ github.event.workflow_run.id }}/jobs
-        echo $url
-        #b_r=$(echo -n $url | ./check_status.py build $(./setup.py no_builds))
+        #echo $url
+        b_r=$(echo -n $url | ./check_status.py build $(./setup.py no_builds))
         echo $(./setup.py no_builds)
-        echo -n $url | ./check_status.py build $(./setup.py no_builds)
+        #echo -n $url | ./check_status.py build $(./setup.py no_builds)
         if [ $b_r == 'success' ]; then
           echo "::set-output name=check::pass"
         elif [ $b_r == 'failure' ]; then
