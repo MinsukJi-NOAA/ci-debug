@@ -18,12 +18,16 @@ def check_build(request, no_builds):
         response = urlopen(request)
         data = json.loads(response.read().decode())["jobs"]
         ids = [x["id"] for x in data if re.search("Build", x["name"])]
+        print("no_builds", no_builds, "ids", ids)
         if len(ids) == 1 and next(re.search("matrix", x["name"]) for x in data if x["id"] in ids):
             break
+        print([x["status"] == "completed" for x in data if x["id"] in ids])
         if len(ids) != no_builds:
             continue
         all_completed = all(
             [x["status"] == "completed" for x in data if x["id"] in ids])
+        print([x["status"] == "completed" for x in data if x["id"] in ids])
+        print(all_completed)
     return all([x["conclusion"] == "success" for x in data if x["id"] in ids])
 
 
